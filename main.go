@@ -17,6 +17,11 @@ const (
 
 type server struct{}
 
+// RouteChat implements the RouteChat logic
+func (s *server) RouteChat(stream pb.Chat_RouteChatServer) error {
+	return nil
+}
+
 func main() {
 	fmt.Println("gRPC chat server")
 
