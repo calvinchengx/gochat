@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+import "ChatMessage.proto";
+
+service Chat {
+
+  rpc RouteChat(stream ChatMessage) returns (stream ChatMessage);
+
+}
