@@ -7,4 +7,7 @@ golang chat with protocol buffers and gRPC
 ```bash
 # server
 go run server/main.go
+
+# client
+go run client/main.go
 ```
