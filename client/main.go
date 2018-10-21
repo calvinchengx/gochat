@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"log"
+	"os"
 
 	"github.com/calvinchengx/gochat/pb"
 
@@ -26,11 +28,17 @@ func main() {
 	if serr != nil {
 		log.Fatalf("Stream error %v", err)
 	}
-	log.Printf("Sending stream")
-	stream.Send(&pb.ChatMessage{
-		Sender:   "alice",
-		Receiver: "bob",
-		Message:  "hello alice",
-	})
+
+	// accept chat message text from stdin
+	reader := bufio.NewReader(os.Stdin)
+	log.Printf("Send your message...")
+	for {
+		text, _ := reader.ReadString('\n')
+		stream.Send(&pb.ChatMessage{
+			Sender:   "alice",
+			Receiver: "bob",
+			Message:  text,
+		})
+	}
 
 }
