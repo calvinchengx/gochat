@@ -3,11 +3,9 @@
 
 package pb
 
-import (
-	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
-	math "math"
-)
+import proto "github.com/golang/protobuf/proto"
+import fmt "fmt"
+import math "math"
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -33,17 +31,16 @@ func (m *ChatMessage) Reset()         { *m = ChatMessage{} }
 func (m *ChatMessage) String() string { return proto.CompactTextString(m) }
 func (*ChatMessage) ProtoMessage()    {}
 func (*ChatMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_4a19954073937298, []int{0}
+	return fileDescriptor_ChatMessage_e6944ce291343236, []int{0}
 }
-
 func (m *ChatMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChatMessage.Unmarshal(m, b)
 }
 func (m *ChatMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ChatMessage.Marshal(b, m, deterministic)
 }
-func (m *ChatMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ChatMessage.Merge(m, src)
+func (dst *ChatMessage) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ChatMessage.Merge(dst, src)
 }
 func (m *ChatMessage) XXX_Size() int {
 	return xxx_messageInfo_ChatMessage.Size(m)
@@ -79,9 +76,9 @@ func init() {
 	proto.RegisterType((*ChatMessage)(nil), "proto.ChatMessage")
 }
 
-func init() { proto.RegisterFile("ChatMessage.proto", fileDescriptor_4a19954073937298) }
+func init() { proto.RegisterFile("ChatMessage.proto", fileDescriptor_ChatMessage_e6944ce291343236) }
 
-var fileDescriptor_4a19954073937298 = []byte{
+var fileDescriptor_ChatMessage_e6944ce291343236 = []byte{
 	// 107 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x74, 0xce, 0x48, 0x2c,
 	0xf1, 0x4d, 0x2d, 0x2e, 0x4e, 0x4c, 0x4f, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05,
