@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  envoy:
+    container_name: envoy
+    build:
+      context: .
+      dockerfile: envoy.Dockerfile
+    image: gochat/envoy
+    ports:
+      - "8080:8080"

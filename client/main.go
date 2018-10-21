@@ -7,13 +7,12 @@ import (
 	"os"
 
 	"github.com/calvinchengx/gochat/pb"
-
 	"google.golang.org/grpc"
 )
 
 func main() {
 
-	conn, err := grpc.Dial("localhost:12021", grpc.WithInsecure())
+	conn, err := grpc.Dial("0.0.0.0:12021", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Could not connect: %v", err)
 	} else {

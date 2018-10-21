@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	port = ":12021"
+	address = "0.0.0.0:12021"
 )
 
 type server struct{}
@@ -64,7 +64,7 @@ func (s *server) RouteChat(stream pb.Chat_RouteChatServer) error {
 func main() {
 	fmt.Println("gRPC chat server")
 
-	lis, err := net.Listen("tcp", port)
+	lis, err := net.Listen("tcp", address)
 	if err != nil {
 		log.Fatalf("Failed to listen %v", err)
 	}
